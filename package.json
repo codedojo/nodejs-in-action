@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-in-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "render.js",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.3"
+  },
+  "scripts": {
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codedojo/nodejs-in-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codedojo/nodejs-in-action/issues"
+  },
+  "homepage": "https://github.com/codedojo/nodejs-in-action#readme"
+}
