@@ -1,0 +1,8 @@
+extends layout
+
+include ../mixins/book-card
+
+block main
+    main
+        for book in books
+            +book-card(book)

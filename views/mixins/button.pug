@@ -1,0 +1,6 @@
+mixin button(text = 'Button', url)
+    - var element = attributes.url ? 'a' : 'button';
+    
+    #{element}.mdc-button(href=attributes.url)= text
+
++button('Сохранить', '/books')()

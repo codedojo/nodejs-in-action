@@ -1,0 +1,6 @@
+include card
+
+mixin book-card(book)
+    +card(book.title)(class='book-card' id=book.slug)
+        != book.description
+        a(href=`/books/${book.slug}`)

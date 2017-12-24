@@ -1,0 +1,6 @@
+mixin card(title)
+    div.mdc-card(class='topic' class=attributes.class)&attributes(attributes)
+        header.mdc-card__primary
+            h1.mdc-card__title.mdc-card__title--large Title: #{title}
+        section.mdc-card__supporting-text
+            block
