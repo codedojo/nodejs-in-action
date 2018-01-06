@@ -1,0 +1,8 @@
+extends _layout
+
+block content
+    h1 Вы уверены что вы хотите удалить заметку
+
+    form(method='POST')
+        a.button(href='/notes') Нет
+        button.button(type='submit') Да

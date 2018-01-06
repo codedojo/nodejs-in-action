@@ -2,12 +2,16 @@
     "name": "nodejs-in-action",
     "version": "1.0.0",
     "private": true,
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
-        "start": "nodemon index"
+        "start": "nodemon server.js"
     },
     "dependencies": {
-        "mongodb": "^3.0.1"
+        "body-parser": "^1.18.2",
+        "express": "^4.16.2",
+        "foundation-sites": "^6.4.4-rc1",
+        "mongodb": "^3.0.1",
+        "pug": "^2.0.0-rc.4"
     },
     "devDependencies": {
         "nodemon": "^1.14.7"

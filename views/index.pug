@@ -1,0 +1,20 @@
+extends _layout
+
+block content
+    h1 Заметки
+
+    a.button(href='/notes/create') Создать заметку
+
+    div.grid-x.grid-margin-x
+        for note in notes
+            div.cell.large-3
+                div.card
+                    div.card-section
+                        h3= note.title
+                        p= note.content
+                    div.button-group.small
+                        a.button(href=`/notes/${note._id}`) Подробнее
+                        a.button(href=`/notes/${note._id}/update`) Редактировать
+                        a.button(href=`/notes/${note._id}/delete`) Удалить
+        else
+            p Заметок нет

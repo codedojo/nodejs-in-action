@@ -1,0 +1,13 @@
+extends _layout
+
+block content
+    h1= title
+
+    a.button(href=`/notes/${note.id}`) Назад
+
+    form(method='POST')
+        input(type='text' name='title' value=note.title placeholder='Название' required)
+
+        textarea(name='content' placeholder='Содержание' required)= note.content
+
+        button.button(type='submit') Сохранить

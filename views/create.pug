@@ -1,0 +1,13 @@
+extends _layout
+
+block content
+    h1 Новая заметка
+
+    a.button(href='/notes') Назад
+
+    form(method='POST')
+        input(type='text' name='title' placeholder='Название' required)
+
+        textarea(name='content' placeholder='Содержание' required)
+
+        button.button(type='submit') Создать
