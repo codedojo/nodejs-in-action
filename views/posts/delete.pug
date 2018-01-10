@@ -1,0 +1,12 @@
+extends ../_layout
+
+block content
+    h1= title
+    p 
+        | Вы уверены что хотите удалить пост 
+        em= post.title
+        | ?
+    form(method='post')
+        div.button-group
+            a.button.hollow(href=`/${post.id}`) Нет
+            button.button(type='submit') Да

@@ -1,0 +1,13 @@
+extends ../_layout
+
+block content
+    h1= author.fullname
+
+    ul
+        for post in author.posts
+            li: a(href=`/${post.id}`)= post.title
+
+    div.button-group
+        a.button.hollow(href='../') Назад
+        a.button(href=`/${author.id}/update`) Редактировать
+        a.button(href=`/${author.id}/delete`) Удалить

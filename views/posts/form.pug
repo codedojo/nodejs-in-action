@@ -1,0 +1,24 @@
+div
+    label(for='title') Название:
+    input(type='text' name='title' value=post.title required)
+
+div
+    label(for='author') Автор:
+    select(name='authorId' required)
+        option(disabled selected)
+        for author in authors
+            option(value=author.id selected=author.id === post.authorId)= author.fullname
+        else
+            option(disabled selected) Нет авторов
+
+div
+    label(for='date') Дата:
+    input(type='date' name='date' value=post.date required)
+
+div
+    label(for='body') Содержание:
+    textarea(name='body' required)= post.body
+
+div.button-group
+    a.button.hollow(href=`/${post.id || ''}`) Отменить
+    button.button(type='submit')= post.id ? 'Сохранить' : 'Создать'

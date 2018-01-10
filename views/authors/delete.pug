@@ -1,0 +1,12 @@
+extends ../_layout
+
+block content
+    h1= title
+    p 
+        | Вы уверены что хотите удалить автора 
+        em= author.fullname
+        | ?
+    form(method='post')
+        div.button-group
+            a.button.hollow(href=`/${author.id}`) Нет
+            button.button(type='submit') Да

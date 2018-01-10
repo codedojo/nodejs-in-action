@@ -1,0 +1,11 @@
+div
+    label(for='firstname') Имя:
+    input(type='text' name='firstname' value=author.firstname required)
+
+div
+    label(for='lastname') Фамилия:
+    input(type='text' name='lastname' value=author.lastname required)
+
+div.button-group
+    a.button.hollow(href=`/${author.id || ''}`) Отменить
+    button.button(type='submit')= author.id ? 'Сохранить' : 'Создать'

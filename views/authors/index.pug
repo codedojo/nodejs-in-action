@@ -1,0 +1,10 @@
+extends ../_layout
+
+block content
+    h1= title
+    p
+      a(href='/create') Добавить автора
+  
+    for author in authors
+        h2= author.fullname
+        a(href=`/${post.id}`) Подробнее &rarr;

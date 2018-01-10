@@ -1,0 +1,10 @@
+mixin post-card(post)
+    div.card
+        div.card-section
+            h3= post.title
+            p.small
+                a(href=`/authors/${post.author.id}`)= post.author.fullname
+                |  | 
+                a(href=`/posts?date=${post.date}`)= post.date
+            p= post.preview
+            a.button(href=`/${post.id}`) Подробнее

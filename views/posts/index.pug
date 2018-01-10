@@ -1,0 +1,14 @@
+extends ../_layout
+
+include _mixins/post-card
+
+block content
+    h1= title
+    div.button-group
+      a.button(href='/create') Создать пост
+      a.button(href='/authors/create') Добавить автора
+  
+    div.grid-x.grid-margin-x
+        for post in posts
+            div.cell.large-3
+                +post-card(post)
