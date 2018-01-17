@@ -1,0 +1,15 @@
+extends _layout
+
+block main
+    p Полезные ссылки
+    ul
+        li: a(href='https://developer.mozilla.org/ru/docs/Web/HTTP/%D0%9A%D1%83%D0%BA%D0%B8' target='_blank') Куки HTTP
+        li Документация Express
+            ul
+                li: code: a(href='http://expressjs.com/en/4x/api.html#req.cookies' target='_blank') req.cookies
+                li: code: a(href='http://expressjs.com/en/4x/api.html#req.signedCookies' target='_blank') req.signedCookies
+                li: code: a(href='http://expressjs.com/en/4x/api.html#res.cookie' target='_blank') res.cookie()
+                li: code: a(href='http://expressjs.com/en/4x/api.html#res.clearCookie' target='_blank') res.clearCookie()
+        li: code: a(href='https://github.com/expressjs/cookie-parser' target='_blank') cookie-parser
+        li: code: a(href='https://github.com/expressjs/cookie-session' target='_blank') cookie-session
+        li: code: a(href='https://github.com/expressjs/session' target='_blank') express-session
