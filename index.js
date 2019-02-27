@@ -1,35 +1,46 @@
 const { MongoClient } = require('mongodb');
 
-MongoClient.connect('mongodb://localhost:27017/nodejs-in-action')
+const MONGODB_URL = 'mongodb://localhost:27017/codelibrary';
+
+MongoClient.connect(MONGODB_URL)
     .then(client => {
         console.log('Connected');
 
-        let db = client.db('nodejs-in-action');
-        let collection = db.collection('notes');
+        let db = client.db('codelibrary');
+        let collection = db.collection('books');
 
-        // collection.insertOne({
-        //     title: 'Node.js',
-        //     content: 'as;dfasjdf;sdf'
-        // }).then(result => {
-        //     console.log(result);
-        // });
+        collection.insertOne({
+            title: 'Node.js in Action'
+        }).then(result => {
+            console.log(result.insertedId);
 
-        // collection.findOne({ title: 'Node.js' })
-        //     .then(docs => {
-        //         console.log(docs);
-        //     });
+            client.close();
+        });
 
-        // collection.updateOne({ title: 'Node.js' }, { $set: { title: 'NodeJS' } })
-        //     .then(result => {
-        //         console.log(result.result);
-        //     })
-        //     .catch(console.error);
+        collection.find({}).toArray()
+            .then(docs => {
+                console.log(docs);
 
-        // collection.deleteOne({ title: 'Node.js' })
-        //     .then(result => {
-        //         console.log(result.deletedCount)
-        //     });
+                client.close();
+            });
 
-        client.close();
+        collection.find({}).toArray()
+            .then(docs => {
+                console.log(docs);
+
+                client.close();
+            });
+
+        collection.updateOne({ title: 'Node.js in Action' }, { $set: { slug: 'nodejs-in-action' } })
+            .then(result => {
+                console.log('Updated: ', result.);
+
+                client.close();
+            });
+
+        collection.deleteOne({ title: 'Node.js in Action' })
+            .then(result => {
+                console.log('Deleted:', result.deletedCount);
+            });        
     })
     .catch(console.error);
